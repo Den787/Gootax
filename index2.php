@@ -225,7 +225,7 @@ function doCheck($a,$b){
         return ($a * $b) / highNumber($a,$b);
     }
 }
-print_r(doCheck(100,15)); //5
+print_r(doCheck(100,15));
 
 echo '<br/>';
 echo '<hr>';
