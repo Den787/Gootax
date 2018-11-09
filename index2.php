@@ -136,16 +136,16 @@ function mathOperation($arg1,$arg2,$operation) {
     switch ($operation) {
         case '-' :
             return doDiff($arg1,$arg2);
-            break;
+           // break; лишний - хватит return
         case '+':
             return doSum($arg1,$arg2);
-            break;
+         //   break;
         case '*':
             return doMult($arg1,$arg2);
-            break;
+         //   break;
         case '/':
             return doDiv($arg1,$arg2);
-            break;
+         //   break;
     }
 }
 
@@ -193,10 +193,10 @@ function highNumber($num1,$num2) {
     if($num1 > $num2) {
         return $num1;
     }
-    elseif ($num1 < $num2) {
+    if ($num1 < $num2) {  // Если return есть, то else, elseif уже не нужен, далее идет просто if
         return $num2;
     }
-    elseif ($num1 === $num2) {
+    if ($num1 === $num2) {
         return $num1;
     }
 }
@@ -207,10 +207,10 @@ function smallNumber($num1,$num2) {
     if($num1 > $num2) {
         return $num2;
     }
-    elseif ($num1 < $num2) {
+    if ($num1 < $num2) {
         return $num1;
     }
-    elseif ($num1 === $num2) {
+    if ($num1 === $num2) {
         return $num1;
     }
 }
@@ -221,7 +221,7 @@ function doCheck($a,$b){
     if(($a * $b > 100) && ($a * $b < 1000)) {
        return highNumber($a,$b) - smallNumber($a,$b);
     }
-    elseif ($a * $b > 1000) {
+    if ($a * $b > 1000) {
         return ($a * $b) / highNumber($a,$b);
     }
 }
