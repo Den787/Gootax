@@ -90,15 +90,17 @@ $array = [
     'Ленинградская область' =>  //1
         ['Санкт-Санкт-Петербург', 'Всеволожск', 'Павловск'], //2
     'Удмуртия' =>  //1
-        ['Ижевск','Воткинск','Сарапул','Глазов','Камбарка'], //2
+        ['Ижевск','Воткинск','Сарапул','Glazov','Камбарка'], //2
 ];
-
-
+$result = '';
+$char = 'К';
 foreach($array as $level1 => $value) {
     foreach($value as $level2) {
-        $level2 = implode(", " , $value);
+        if(mb_substr($level2,0,1)===$char){
+            echo "$level2" ."<br/>";
+        }
     }
-    echo "$level1: $level2" . "<br/>";
+
 }
 
 echo '<br/>';
@@ -200,3 +202,5 @@ print_r(doAllToStr($str));
 echo '<br/>';
 echo '<hr>';
 echo '<br/>';
+
+
