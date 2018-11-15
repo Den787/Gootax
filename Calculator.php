@@ -6,6 +6,7 @@ if  (isset($_POST['submit'])) {
     $b = $_POST['b'];
     $znak = $_POST['znak'];
 
+
     if (!empty($a) && !empty($znak) && !empty($b)) {
 
         if (is_numeric($a) && is_numeric($b)) {
@@ -14,7 +15,8 @@ if  (isset($_POST['submit'])) {
 
             if ($result != false) {
 
-               print_r ($result);
+               print_r($result);
+               $x = $result;
 
             }
 
@@ -43,8 +45,10 @@ if  (isset($_POST['submit'])) {
     <p> Введите знак: </p>
     <input type="text" name="znak"><br>
     <p> Введите число 2: </p>
-    <input type="text" name="b"><br>
-    <input type="submit" value="Submit" name="submit">
+    <input type="text" name="b"><br><br>
+    <input type="submit" value="Посчитать" name="submit">
+    <p> Ответ: </p>
+    <input type="text" disabled value="<?php echo $x ?>">
 </form>
 
 </body>
