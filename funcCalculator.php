@@ -6,6 +6,7 @@
 
 
             switch ($znak) {
+
                 case '-' :
                     $x = $a - $b;
                     return $x;
@@ -18,8 +19,16 @@
 
                     return $x;
                 case '/' :
-                       $x = $a / $b;
+                    if ($b != 0) {
+                        $x = $a / $b;
                         return $x;
+                    }
+                    else {
+                        echo "На ноль делить нельзя";
+                        break;
+                    }
+
+
                     }
             }
 

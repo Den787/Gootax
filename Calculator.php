@@ -1,10 +1,15 @@
 <?php
 include_once 'funcCalculator.php';
 
+
+$x = '';  //выводит пустое значение при первом открытии
+
 if  (isset($_POST['submit'])) {
     $a = $_POST['a'];
     $b = $_POST['b'];
     $znak = $_POST['znak'];
+
+
 
 
     if (!empty($a) && !empty($znak) && !empty($b)) {
@@ -15,7 +20,7 @@ if  (isset($_POST['submit'])) {
 
             if ($result != false) {
 
-               print_r($result);
+               print_r($result); //просто так для проверки
                $x = $result;
 
             }
@@ -35,7 +40,7 @@ if  (isset($_POST['submit'])) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Калькулятор</title>
 </head>
 <body>
 
@@ -48,7 +53,8 @@ if  (isset($_POST['submit'])) {
     <input type="text" name="b"><br><br>
     <input type="submit" value="Посчитать" name="submit">
     <p> Ответ: </p>
-    <input type="text" disabled value="<?php echo $x ?>">
+    <input type="text" disabled  value="<?php echo $x ?>">
+    <input type="reset" value="Очистить форму">
 </form>
 
 </body>
