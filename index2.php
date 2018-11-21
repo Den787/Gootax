@@ -109,7 +109,12 @@ print_r(doDiff(5,2));
 echo '<br/>';
 
 function doDiv($num1,$num2) {
-    return $num1 / $num2;
+   if($num2 != 0) {
+        return $num1 / $num2;
+    }
+    else {
+        echo 'Деление на 0 запрещено';
+    }
 }
 print_r(doDiv(5,2));
 echo '<br/>';
