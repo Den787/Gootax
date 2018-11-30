@@ -72,7 +72,7 @@ if (isset($_POST['submit']))  {
 
     if (isset($im)) {
         echo $prename;
-        $q = "INSERT INTO image (image_id, ext, click, dir_big, dir_small) VALUES ('$prename', '$ext' , 10, '$directoryBig', '$directorySmall') ";
+        $q = "INSERT INTO image (image_id, ext, click) VALUES ('$prename', '$ext' , '0') ";
         $query = mysqli_query($db,$q);
     }
     else {
